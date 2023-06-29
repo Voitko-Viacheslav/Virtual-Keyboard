@@ -18,23 +18,25 @@ const wrapper = document.createElement('div');
 wrapper.classList.add('wrap');
 container.append(wrapper);
 
-const line = document.createElement('div');
-line.classList.add('line');
-wrapper.append(line);
-
 
 const arrayOne = ['~', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'];
+const arrayTwo = ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}', 'Del'];
 
-(function f1() {
-    for (let i = 0; i < arrayOne.length; i++) {
+function createKeys(array) {
+    const line = document.createElement('div');
+    line.classList.add('line');
+    wrapper.append(line);
+
+    for (let i = 0; i < array.length; i++) {
         let keyOne = document.createElement('div');
         keyOne.classList.add('key');
-        keyOne.textContent = arrayOne[i];
-        if (arrayOne[i].length > 2) {
+        keyOne.textContent = array[i];
+        if (array[i].length > 2) {
             keyOne.classList.add('keyLong');
         }
         line.append(keyOne);
     }
-}());
+}
 
-
+createKeys(arrayOne);
+createKeys(arrayTwo);

@@ -23,4 +23,6 @@
 
 .keyLong {
     width: auto;
+    min-width: 60px;
+    padding: 0px 5px;
 }
